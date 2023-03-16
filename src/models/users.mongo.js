@@ -2,12 +2,24 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-  userName: String,
-  email: String,
-  password: String,
+  userName: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
   followers: [{ type: mongoose.Types.ObjectId, ref: "User" }],
   following: [{ type: mongoose.Types.ObjectId, ref: "User" }],
-  isPublic: Boolean,
+  isPublic: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 userSchema.methods.generateHash = function (password) {
