@@ -19,7 +19,7 @@ async function startServer() {
 startServer();
 
 /*
-POST{
+POST{   https://www.digitalocean.com/community/tutorials/api-authentication-with-json-web-tokensjwt-and-passport
     userID,
     timeStamp,
     text,
